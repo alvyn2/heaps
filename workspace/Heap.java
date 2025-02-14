@@ -5,11 +5,7 @@ public class Heap {
     private int[] arr;
     private int finalIndex=0;
     
-    //constructor for your heap
-    //feel free to make one that takes in an array if you prefer for your testing purposes.
-    //note that we will not be inserting more than 100 elements into our array so you need not worry about re-sizing
-    //the array
-    
+    //constructor for your heap given in starter code
     public Heap() {
     
     arr = new int[100];
@@ -19,7 +15,7 @@ public class Heap {
      
     
      
-    
+    //precondition: to Add is a valid int 
     // adds elements to the heap and adjusts to kepp heap properties
     public void add(int toAdd) {
         int i=finalIndex;
@@ -30,9 +26,8 @@ public class Heap {
     }
     
      
-    
-    //remove the largest element of the heap (the root) and re-heapafy
-    //5 points
+    //precondition:heap has at least one element and final index is as least one
+    //postcondition:remove the largest element of the heap (the root) and re-heapafy
     public void removeMax() {
         arr[0]=0;
         for(int i=0;i<=finalIndex;i++){
@@ -44,10 +39,8 @@ public class Heap {
     }
     
      
-    
-    //this should check and alter the tree after an item is inserted
-    //3 points
-    
+    //precondition: tree has elements
+    //check and alter the tree after an item is inserted
     private void siftUp(int index) {
         int temp;
         while(index!=0){
@@ -64,11 +57,8 @@ public class Heap {
     }
     
      
-    
+    //preconditon:
     //this should check and alter the tree after an item is deleted.
-    
-    //3 points
-    
     private void siftDown(int index) {
         @SuppressWarnings("unused")
         int temp;
@@ -90,6 +80,7 @@ public class Heap {
        // }
 
     }
+    
 // prints the heap
     public String toString(){
         String out="";
