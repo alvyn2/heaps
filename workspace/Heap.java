@@ -20,19 +20,12 @@ public class Heap {
     
      
     
-    //create this function to add elements to your heap
-    
-    //all heap properties must be preserved
-    
-    // 5 points
+    // adds elements to the heap and adjusts to kepp heap properties
     public void add(int toAdd) {
-
-      int i=finalIndex;
+        int i=finalIndex;
         arr[i]=toAdd;
         siftUp(i);
-        
-
-    finalIndex++;    
+        finalIndex++;    
     
     }
     
@@ -57,16 +50,17 @@ public class Heap {
     
     private void siftUp(int index) {
         int temp;
+        while(index!=0){
         if(arr[index]>arr[(index-1)/2]){
             temp=arr[(index-1)/2];
             arr[(index-1)/2]=arr[index];
             arr[index]=temp;
         }
         index=(index-1)/2;
-        if(arr[index]>arr[(index-1)/2]){
-            siftUp((index-1)/2);
+       // if(arr[index]>arr[(index-1)/2]){
+            //siftUp((index-1)/2);
+       // }
         }
-
     }
     
      
@@ -76,6 +70,7 @@ public class Heap {
     //3 points
     
     private void siftDown(int index) {
+        @SuppressWarnings("unused")
         int temp;
         //while(index<=finalIndex){
             if(arr[index*2+1]>arr[index]){
@@ -95,13 +90,21 @@ public class Heap {
        // }
 
     }
-
+// prints the heap
     public String toString(){
         String out="";
-        for(int i=0;i<=finalIndex;i++){
-            out+=arr[i];
-            out+= " ";
-        }
+        int i=0;
+        int nextLevel=0;
+        while(nextLevel<=finalIndex){
+            
+            for(i=i;i<nextLevel;i++){
+            
+                out+=arr[i];
+              out+= " ";
+            }
+            out+="\n";
+            nextLevel=2*i+1;
+        }   
         return out;
     }
 

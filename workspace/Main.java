@@ -15,7 +15,23 @@ public class Main{
         h.add(40);
         h.add(690);
         h.add(700);
+        h.add(501);
+        h.add(640);
+        h.add(105);
+        h.add(206);
+        h.add(302);
+        h.add(403);
+        h.add(699);
+        h.add(800);
         System.out.println(h);
-
+        h.removeMax();
+        
+        h.removeMax();
+       
+        h.removeMax();
+        
+        h.removeMax();
+        System.out.println(h);
+        
     }
 }
